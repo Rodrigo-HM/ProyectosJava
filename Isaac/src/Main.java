@@ -34,7 +34,7 @@ public class Main {
         Personajes personajeSeleccionado = Personajes.seleccionarPersonaje();
         System.out.println("Comienza tu aventura con " + personajeSeleccionado.getNombre() + "...");
 
-        Mapa.generarmapa();
+        Mapa.mostrarmapa();
 
         // Juego principal
         while (personajeSeleccionado.vida > 0 && piso != 3) {
@@ -148,7 +148,7 @@ public class Main {
 
 
                             if (piso != 3) {
-                                Mapa.generarmapa();
+                                Mapa.mostrarmapa();
                             }
                             break;
 

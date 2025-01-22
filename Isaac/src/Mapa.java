@@ -35,7 +35,7 @@ public class Mapa {
 
     private static String[][] cuadricula = new String[5][5];
 
-    public static void generarmapa() {
+    public static void mostrarmapa() {
         for (int fila = 0; fila < 5; fila++) {
             for (int columna = 0; columna < 5; columna++) {
                 cuadricula[fila][columna] = "⏹"; // Valor inicial
@@ -209,7 +209,7 @@ public class Mapa {
             }
         }
     }
-  /*  public static boolean quedansalas(){
+    public static boolean quedansalas(){
 
         for (int fila = 0; fila < 5; fila++) {
             for (int columna = 0; columna < 5; columna++) {
@@ -219,7 +219,7 @@ public class Mapa {
             }
 
         }return false;
-    } */
+    }
     public static void ubiboss(){
         for (int fila = 0; fila < 5; fila++) {
             for (int columna = 0; columna < 5; columna++) {
