@@ -7,7 +7,7 @@ public class App {
 
         JFrame frame = new JFrame("Flappy Bird");
         // frame.setVisible(true);
-         frame.setSize(boardWidth, boardHeight);
+        frame.setSize(boardWidth, boardHeight);
 
        frame.setLocationRelativeTo(null);   //Lo centra en medio de la pantalla
        frame.setResizable(false);               //hace que no se pueda modificar el tamaño de la ventana

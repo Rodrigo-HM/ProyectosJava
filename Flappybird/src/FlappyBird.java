@@ -142,8 +142,8 @@ public class FlappyBird  extends JPanel implements ActionListener, KeyListener {
 
         //Tuberia
         for (int i = 0; i < tuberias.size(); i++) {
-           Tuberia tuberia=tuberias.get(i);
-           g.drawImage(tuberia.img, tuberia.x, tuberia.y, tuberia.ancho, tuberia.alto, null);
+            Tuberia tuberia=tuberias.get(i);
+            g.drawImage(tuberia.img, tuberia.x, tuberia.y, tuberia.ancho, tuberia.alto, null);
 
         }
 
