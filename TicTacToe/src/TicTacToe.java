@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -45,6 +46,9 @@ public class TicTacToe {
         boardPanel.setBackground(Color.darkGray);
         frame.add(boardPanel);
 
+
+
+
         for(int r=0; r<3; r++){
             for(int c=0; c<3; c++){
                 JButton tile=new JButton();
@@ -55,21 +59,60 @@ public class TicTacToe {
                 tile.setForeground(Color.WHITE);
                 tile.setFont(new Font("Arial", Font.BOLD, 120));
                 tile.setFocusPainted(false); //para que no se vea el borde
+
+
                 
 
                 tile.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if (gameover) return;
+
                         JButton tile = (JButton) e.getSource();
                         if(tile.getText()==""){
                             tile.setText(currentPLayer);
+
+                            //maquina
+                            int contador=-1;
+                            ArrayList<Integer>row=new ArrayList<>();
+                            ArrayList<Integer>col=new ArrayList<>();
+                            for(int r=0; r<3; r++){
+                                for(int c=0; c<3; c++){
+                                    if(board[r][c].getText()=="X"){
+                                        contador++;
+                                        row.add(r);
+                                        col.add(c);
+
+                                    }
+                                    //solo para verlo (se puede quitar
+                                    if(r==2&&c==2){
+                                        System.out.println(contador);
+                                        System.out.println(row);
+                                        System.out.println(col);}
+                                }
+                            }
+
+                            if(contador==1){
+
+                                if(board[row.get(0)][col.get(0)].equals(playerX)){
+                                    tile=board[1][1];
+                                    tile.setText(currentPLayer);
+
+                                }
+
+                            }
+
+
+
                             turn++;
                             checkWinner();
                             if(!gameover){
                                 currentPLayer=currentPLayer.equals(playerX)?playerO:playerX;
                                 textLabel.setText(currentPLayer+"'s turn.");
                             }
+
+
+
                             
                         }
                         
@@ -77,6 +120,7 @@ public class TicTacToe {
 
                     
                 });
+
             }
         }
 
