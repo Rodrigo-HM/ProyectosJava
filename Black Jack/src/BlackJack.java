@@ -55,14 +55,11 @@ public class BlackJack {
     int playerAceCount;
 
     //window
-    int boardWidth= 600;
-    int boardHeight= boardWidth;
+    int boardWidth= 900;
+    int boardHeight= 600;
 
     //fihcas
-    int ficha5 = 5;
-    int fucha10 = 10;
-    int ficha25 = 25;
-    int ficha50 = 50;
+    
     int apuesta;
     int dineroTotal = 500;
 
@@ -137,6 +134,7 @@ public class BlackJack {
     JButton hitButton= new JButton("Hit");
     JButton stayButton= new JButton("Stay");
     JButton resetButton = new JButton("Reset");
+    JPanel fichasPanel= new JPanel(); 
     
 
 
@@ -152,6 +150,11 @@ public class BlackJack {
         gamePanel.setLayout(new BorderLayout()); //divide el contenedor en 5 areas 
         gamePanel.setBackground(new Color(53,101,77));
         frame.add(gamePanel); // lo añade al frame
+
+        //prueba
+        frame.add(fichasPanel, BorderLayout.EAST);
+
+
 
         hitButton.setFocusable(false);
         buttonPanel.add(hitButton);
@@ -169,6 +172,67 @@ public class BlackJack {
                 resetGame();
             }
         });
+        // Crear un botón con una imagen
+        /*  JButton ficha5Img = new JButton(new ImageIcon(getClass().getResource("./cards/5.png")));
+        JButton ficha10Img = new JButton(new ImageIcon(getClass().getResource("./cards/10.png")));
+        JButton ficha25Img = new JButton(new ImageIcon(getClass().getResource("./cards/25.png")));
+        JButton ficha50Img = new JButton(new ImageIcon(getClass().getResource("./cards/50.png")));
+        ficha5Img.setFocusable(false);
+        ficha10Img.setFocusable(false);
+        ficha25Img.setFocusable(false);
+        ficha50Img.setFocusable(false);
+
+        // Configurar fichasPanel con BoxLayout para organizar los botones verticalmente
+        fichasPanel.setLayout(new BoxLayout(fichasPanel, BoxLayout.Y_AXIS));
+        fichasPanel.add(ficha5Img);
+        fichasPanel.add(ficha10Img);
+        fichasPanel.add(ficha25Img);
+        fichasPanel.add(ficha50Img);
+
+        // Asegúrate de que el fichasPanel tenga un tamaño adecuado
+        fichasPanel.setPreferredSize(new Dimension(200, boardHeight));
+        fichasPanel.setBackground(new Color(53, 53, 53));
+
+        // Asegúrate de que el fichasPanel sea visible
+        fichasPanel.setVisible(true);
+
+        // Agregar el fichasPanel al frame
+        frame.add(fichasPanel, BorderLayout.EAST);
+
+        // Repintar el frame para asegurarse de que todos los componentes se dibujen correctamente
+        frame.revalidate();
+        frame.repaint();
+
+
+        // Agregar ActionListener al botón de imagen
+        ficha5Img.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Acción a realizar cuando se presiona el botón de imagen
+                apuesta+=5;
+            }
+        });
+        ficha10Img.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Acción a realizar cuando se presiona el botón de imagen
+                apuesta+=10;
+            }
+        });
+        ficha25Img.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Acción a realizar cuando se presiona el botón de imagen
+                apuesta+=25;
+            }
+        });
+        ficha50Img.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Acción a realizar cuando se presiona el botón de imagen
+                apuesta+=50;
+            }
+        }); */
 
         //para que el boton hit funcione
 
